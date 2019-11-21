@@ -1,0 +1,1484 @@
+{
+	"info": {
+		"_postman_id": "0b3e3920-ac68-49da-b196-e47f75893d84",
+		"name": "online_pharmacies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01- register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"full_name\":\"marwa mm\",\n\t\"email\":\"marwa.mourad.15@gmail.com\",\n\t\"phone_number\":\"01065072298\",\n\t\"address\":\"test123\",\n\t\"state_id\":1,\n    \"city_id\":526,\n\t\"password\":\"123456\",\n\t\"password_confirmation\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/register?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02- login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"marwa.mourad.15@gmail.com\",\n\t\"password\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/login?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03- get profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/getProfile?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"getProfile"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04- edit profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"full_name\":\"marwa mourad\",\n\t\"address\":\"test123 address\",\n\t\"state_id\":1,\n    \"city_id\":525,\n\t\"image\":\" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALsAAACbCAMAAAAN4hpuAAAC/VBMVEVMaXHi35j11zCj0t7////11zD////11zCbztv////11zD////11zCbztv////11zD////////11zD////11zCbztv11zD////////11zCbztv11zD///+bztv11zD////11zD///+bztv////11zD///+bztv////11zD55nv////M037////11zD11zD////////11zD///////+bztv11zD////11zCbztv11zD////////11zD////11zD///+bztv////11zD11zD///+bztv11zD44mj///+bztv11zD////11zD11zD///+bztv11zD////11zD11zD///+bztv11zD////////11zCbztv////11zD////67Jn11zD///////+bztv////442z11zD////88r311zD////33U2bztv11zD////++uL////11zD11zCbztv///7888D11zD////12DH///+bztv////11zDH0of////999f11zD////11zD66pKbztv331z////11zD///+bztv99cz11zD///+bztv11zD////11zD///+bztv////22jz11zD////56Yv////11zCbztv////11zD44WT////88rv11zCbztv////11zD////11zD///+bztv11zD////11zC+0pj11zD////776/////11zD9+Nn///+bztv11zCpz8H11zD///+bztv////11zCbztv////11zCbztv23Ev///8AAAD11zCbztvMzMwiIiIRERHu7u6IiIgzMzPd3d1ERES7u7tVVVWZmZlmZmaqqqp3d3f22Tj///712DP23EX66o/22j///vb//vr78LP+/fD77qP9+Nv33lT331n45HT776388rv+++f44WL55Xj55n/665T67Z788bj888H89cn99s/999T+++z33VD44mf442/554T++eH34F756Ij67Jn776j89MX9+d/442v44mm+0pj56Ialz8jK04LOmL+9AAAAv3RSTlMAAQQEBQYJCQoLDA0PEBASFBUXGBkbHBwgICIkJCUnKCwsLDAyMjY2Nzc5OTw9QEBCRERHSEpKTU9QUFNVWFpcXGBgZGVlaGhpamxwcXR3d3l8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\"\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/editProfile?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"editProfile"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05- forgot password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"marwa.mourad.15@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/password/sendResetPasswordMobile?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"password",
+						"sendResetPasswordMobile"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06- change password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"old_password\":\"12345\",\n\t\"new_password\":\"654321\",\n\t\"confirm_new_password\":\"654321\"\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/changePassword?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"changePassword"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07- get states",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/getStates?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"getStates"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08- get cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/getCities?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"getCities"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9-get_departments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/get_departments?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_departments"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10-get_home",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/get_home?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_home"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11-search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"department_id\":2,\n\t\"keyword\":\"a1\",\n\t\"perPage\":10,\n\t\"page\":1,\n\t\"company_name\":\"gc\",\n\t\"active_ingredient\":\"abc\",\n\t\"target_audience\":\"kids\"\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/search?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12-get_product_by_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/get_product_by_id?product_id=1984&lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_product_by_id"
+					],
+					"query": [
+						{
+							"key": "product_id",
+							"value": "1984"
+						},
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13-get_product_review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/get_product_review?product_id=1984",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_product_review"
+					],
+					"query": [
+						{
+							"key": "product_id",
+							"value": "1984"
+						},
+						{
+							"key": "lang_id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14-add_product_review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\":1984,\n\t\"rate\":3.5,\n\t\"review\":\"test\"\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/add_product_review",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"add_product_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15-add_favorite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\":1984\n}"
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/add_favorite",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"add_favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16-get_favorite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/get_favorite?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_favorite"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17-locate_store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/get_stories",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_stories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18-contact_detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/get_contact_detail",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_contact_detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19-  faq",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/faq?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"faq"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20-  setting",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/setting",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"setting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21- getOrders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cda0f5d7116eda894c2979c4f71cce62"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/getOrders?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"getOrders"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22- trackOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/trackOrder?lang_id=1&order_id=48",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"trackOrder"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						},
+						{
+							"key": "order_id",
+							"value": "48"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23- getPrescriptions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/getPrescriptions?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"getPrescriptions"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24- uploadPrescription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "marwa mourad",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "marwa.mourad.15@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "01142558214",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "dksaj dsajd jsaij disado jasdij sad ",
+							"type": "text"
+						},
+						{
+							"key": "state_id",
+							"value": "162",
+							"type": "text"
+						},
+						{
+							"key": "city_id",
+							"value": "751",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": " data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4RDcRXhpZgAATU0AKgAAAAgABAE7AAIAAAAGAAAISodpAAQAAAABAAAIUJydAAEAAAAMAAAQyOocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEFobWVkAAAFkAMAAgAAABQAABCekAQAAgAAABQAABCykpEAAgAAAAMwOQAAkpIAAgAAAAMwOQAA6hwABwAACAwAAAiSAAAAABzqAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAxODowNTowNSAxNDozNjowMAAyMDE4OjA1OjA1IDE0OjM2OjAwAAAAQQBoAG0AZQBkAAAA/+ELGGh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4NCjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iPjxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iLz48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+PHhtcDpDcmVhdGVEYXRlPjIwMTgtMDUtMDVUMTQ6MzY6MDAuMDkyPC94bXA6Q3JlYXRlRGF0ZT48L3JkZjpEZXNjcmlwdGlvbj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+PGRjOmNyZWF0b3I+PHJkZjpTZXEgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOmxpPkFobWVkPC9yZGY6bGk+PC9yZGY6U2VxPg0KCQkJPC9kYzpjcmVhdG9yPjwvcmRmOkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgPD94cGFja2V0IGVuZD0ndyc/Pv/bAEMABwUFBgUEBwYFBggHBwgKEQsKCQkKFQ8QDBEYFRoZGBUYFxseJyEbHSUdFxgiLiIlKCkrLCsaIC8zLyoyJyorKv/bAEMBBwgICgkKFAsLFCocGBwqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKv/AABEIAFQAcAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APHaKKK1MAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/uploadPrescription?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"uploadPrescription"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "25- addToCart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "1984",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/addToCart?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"addToCart"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26- removeFromCart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cda0f5d7116eda894c2979c4f71cce62"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "6870",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/removeFromCart?lang_id=1&product_id=6871",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"removeFromCart"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						},
+						{
+							"key": "product_id",
+							"value": "6871"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "27- getCart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "6870",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/getCart?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"getCart"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "28- updateCart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cda0f5d7116eda894c2979c4f71cce62"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "6870",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/updateCart?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"updateCart"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "29- checkAvailability",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "state_id",
+							"value": "162",
+							"type": "text"
+						},
+						{
+							"key": "city_id",
+							"value": "751",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/checkAvailability?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"checkAvailability"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "30- checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$rIkBWcYFvujy0OW9M0VRPenD7hCTr.WRQBPyYvSbuHgSIvGgmJSvi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "marwa mourad",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "marwa.mourad.15@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "01065072298",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "dksaj dsajd jsaij disado jasdij sad ",
+							"type": "text"
+						},
+						{
+							"key": "state_id",
+							"value": "162",
+							"type": "text"
+						},
+						{
+							"key": "city_id",
+							"value": "751",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://hs.pbc-egy.com/api/checkout?lang_id=1",
+					"protocol": "http",
+					"host": [
+						"hs",
+						"pbc-egy",
+						"com"
+					],
+					"path": [
+						"api",
+						"checkout"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "31 - gettargetaudince",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "b76724202db5d92a84b1659b74c1c93f",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/getTargetAudience?lang_id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getTargetAudience"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "32 - getSpecialist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "b76724202db5d92a84b1659b74c1c93f",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/getSpecialist?",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getSpecialist"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "33 - getPharmaceuticalForm",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "b76724202db5d92a84b1659b74c1c93f",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/getPharmaceuticalForm?lang_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getPharmaceuticalForm"
+					],
+					"query": [
+						{
+							"key": "lang_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
